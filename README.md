@@ -24,7 +24,27 @@ Test the C Program for the desired output.
 # PROGRAM:
 
 ## C Program to create new process using Linux API system calls fork() and getpid() , getppid() and to print process ID and parent Process ID using Linux API system calls
+```
+#include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h>
+int main(void)
+{	//variable to store calling function's process id
+	pid_t process_id;
+	//variable to store parent function's process id
+	pid_t p_process_id;
+	//getpid() - will return process id of calling function
+	process_id = getpid();
+	//getppid() - will return process id of parent function
+	p_process_id = getppid();
+	//printing the process ids
 
+//printing the process ids
+	printf("The process id: %d\n",process_id);
+	printf("The process id of parent function: %d\n",p_process_id);
+	return 0;
+}
+```
 
 
 
@@ -47,25 +67,32 @@ Test the C Program for the desired output.
 
 
 ## C Program to execute Linux system commands using Linux API system calls exec() , exit() , wait() family
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>  // Needed for fork(), getpid(), getppid(), sleep()
 
+int main() {
+    int pid;
+    pid = fork();  // Create a new process
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    if (pid == 0) {
+        // Child process
+        printf("I am the child, my PID is %d\n", getpid());
+        printf("My parent PID is: %d\n", getppid());
+        exit(0);
+    } else if (pid > 0) {
+        // Parent process
+        printf("I am the parent, my PID is %d\n", getpid());
+        sleep(100);  // Let the parent sleep so child becomes orphan after it exits
+        exit(0);
+    } else {
+        // fork failed
+        perror("fork");
+        exit(1);
+    }
+}
+```
 
 
 
@@ -77,6 +104,19 @@ Test the C Program for the desired output.
 
 
 
+## C Program to execute Linux system commands using Linux API system calls exec() family
+```
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	printf("Running ps with execlp\n");
+	execlp("ps", "ps", "ax", NULL);
+	printf("Done.\n");
+	exit(0);
+}
+```
 
 
 
