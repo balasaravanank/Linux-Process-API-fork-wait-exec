@@ -45,19 +45,8 @@ int main(void)
 	return 0;
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-##OUTPUT
+## OUTPUT
+<img width="871" height="682" alt="Screenshot from 2025-09-30 11-37-47" src="https://github.com/user-attachments/assets/93152fe8-8160-4bd8-9694-c17eefaa0f55" />
 
 
 
@@ -100,7 +89,9 @@ int main() {
 
 
 
-##OUTPUT
+## OUTPUT
+<img width="1052" height="829" alt="Screenshot from 2025-09-30 11-40-18" src="https://github.com/user-attachments/assets/10f88bc6-99d3-4f70-8caa-e2f95755eaaf" />
+
 
 
 
@@ -118,8 +109,8 @@ int main()
 }
 ```
 
-
-
+## OUTPUT
+<img width="1052" height="1007" alt="Screenshot from 2025-09-30 11-44-51" src="https://github.com/user-attachments/assets/daf76ce6-15f0-46b4-a3ab-29f5f57853d6" />
 
 
 
